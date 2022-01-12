@@ -15,12 +15,11 @@ void selectionSort(vector<int> &v) {
 void insertionSort(vector<int> &v) {
     cout << "insertionSort" << endl;
     for (int i = 1; i < v.size(); i++) {
-        int key = v[i], j = i-1;
-        while(j >= 0 && key < v[j]) {
-            swap(v[j], v[j+1]);
-            j--;
+        int key = v[i], c = i-1;
+        while(key < v[c] && c >= 0) {
+            swap(v[c], v[c+1]);
+            c--;
         }
-        v[j+1] = key;
     }
 }
 
@@ -35,6 +34,7 @@ void bubbleSort(vector<int> &v) {
 }
 
 void qsort(vector<int> &v, int s, int e) {
+    cout << "quickSort\n";
     int pivot = v[s];
     int bs = s, be = e;
     while (s<e) {
@@ -61,10 +61,28 @@ int main() {
         v.push_back(a);
     }
 
-//    selectionSort(v);
-//    insertionSort(v);
-//    bubbleSort(v);
-    qsort(v, 0, v.size()-1);
+    int choice;
+    cout << "1. selectionSort\n" << "2. insertinSort\n" << "3. bubbleSort\n" << "4. quickSort\n";
+    cout << "정렬 알고리즘 선택 >>> ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            selectionSort(v);
+            break;
+        case 2:
+            insertionSort(v);
+            break;
+        case 3:
+            bubbleSort(v);
+            break;
+        case 4:
+            qsort(v, 0, v.size()-1);
+            break;
+        default:
+            cout << "정렬 취소" << endl;
+            break;
+    }
 
     for (int i=0; i < v.size(); i++)
         cout << v[i] << " ";
@@ -73,3 +91,7 @@ int main() {
     return 0;
 }
 
+/* input ex
+5
+20 10 35 30 7
+ */
