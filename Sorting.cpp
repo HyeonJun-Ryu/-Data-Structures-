@@ -25,30 +25,28 @@ void insertionSort(vector<int> &v) {
 
 void bubbleSort(vector<int> &v) {
     cout << "bubbleSort" << endl;
-    for(int i=0; i<v.size()-1; i++) {
-        for(int j = 0; j < v.size()-i; j++) {
-            if(v[j-1] > v[j])
-                swap(v[j-1],v[j]);
+    for (int i = 1; i < v.size(); i++) {
+        for (int j = 0; j < v.size()-i; j++) {
+            if (v[j]>v[j+1])    swap(v[j], v[j+1]);
         }
     }
 }
 
-void qsort(vector<int> &v, int s, int e) {
-    cout << "quickSort\n";
-    int pivot = v[s];
-    int bs = s, be = e;
-    while (s<e) {
-        while (pivot <= v[e]&&s<e) e--;
-        if (s>e) break;
-        while (pivot >= v[s]&&s<e) s++;
-        if (s>e) break;
-        swap(v[s], v[e]);
+void qsort(vector<int> &v, int l, int r) {
+    int pivot = v[l];
+    int bl = l, br = r;
+    while (l<r) {
+        while (pivot <= v[r]&&l<r) r--;
+        if (l>r) break;
+        while (pivot >= v[l]&&l<r) l++;
+        if (l>r) break;
+        swap(v[l], v[r]);
     }
-    swap(v[bs], v[s]);
-    if(bs<s)
-        qsort(v,bs,s-1);
-    if(be>e)
-        qsort(v,s+1,be);
+    swap(v[bl], v[l]);
+    if(bl<l)
+        qsort(v,bl,l-1);
+    if(br>r)
+        qsort(v,l+1,br);
 }
 
 int main() {
@@ -77,6 +75,7 @@ int main() {
             bubbleSort(v);
             break;
         case 4:
+            cout << "quickSort\n";
             qsort(v, 0, v.size()-1);
             break;
         default:
