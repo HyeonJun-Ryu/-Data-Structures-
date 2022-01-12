@@ -58,7 +58,7 @@
 ::input::  
 5  
 20 10 35 30 7  
-1 (selectionSort) / 2 (insertinSort) / 3 (bubbleSort) / 4 (quciSort)
+1 (selectionSort) / 2 (insertinSort) / 3 (bubbleSort) / 4 (quickSort)
 
 
 ::output::  
