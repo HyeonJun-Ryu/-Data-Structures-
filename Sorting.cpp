@@ -86,7 +86,7 @@ void partition(int left,int right)
 }
 
 int countarr[10001] = { 0 };
-void countSort(int n) {
+void countingSort(int n) {
     for (int i=0; i < n; i++)
         countarr[arr[i]]++;
     for (int i=0; i <= 10000; i++)
@@ -108,7 +108,7 @@ int main() {
     }
 
     int choice;
-    cout << "1. selectionSort\n" << "2. insertinSort\n" << "3. bubbleSort\n" << "4. quickSort\n" << "5. mergeSort\n" << "6. countSort(숫자 범위 <= 10000)";
+    cout << "1. selectionSort\n" << "2. insertinSort\n" << "3. bubbleSort\n" << "4. quickSort\n" << "5. mergeSort\n" << "6. countingSort(숫자 범위 <= 10000)";
     cout << "정렬 알고리즘 선택 >>> ";
     cin >> choice;
 
@@ -131,8 +131,8 @@ int main() {
             partition(0, n-1);
             break;
         case 6:
-            cout << "countSort\n";
-            countSort(n);
+            cout << "countingSort\n";
+            countingSort(n);
             break;
         default:
             cout << "정렬 취소" << endl;
