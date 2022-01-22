@@ -49,16 +49,34 @@
 (분할과 동시에 정렬을 진행하는 알고리즘)
   
 ![image](https://user-images.githubusercontent.com/74097144/149078217-c182b8a8-b662-4e42-9845-ba3109e652e9.gif)
-  
+
+
+# 5. mergeSort(합병정렬)
+시간복잡도: O(NlogN)  
+공간복잡도: O(N)   
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile6.uf.tistory.com%2Fimage%2F2748243C58BBF920230735)  
+** 합병 정렬에 사용되는 배열은 '전역 변수'로 선언해야 한다.
+
+# 6. countingSort(계수정렬)
+시간복잡도: O(N)
+공간복잡도: O(K)   (배열 최대값 K일 때, K+1 길이의 배열이 필요하므로)  
+
+카운팅 소트는 수의 입력 범위가 비교적 작고 입력 갯수가 많을 때 사용할 수 있는 정렬 방법입니다.  
+입력되는 수가 1 이상 10000 이하의 수이므로 10001개의 배열 크기를 가지는 count 배열을 선언하고 값을 0으로 초기화 합니다.  
+하나씩 입력받으면서 해당 입력 값을 인덱스로 하는 배열 값을 증가시킵니다.  
+이때 입력받는 값들은 배열 값을 증가시키는데만 사용되고 저장하지 않습니다.  
+입력이 끝나면 1부터 10000까지 모든 배열값을 확인하고 0이 아니라면 그 값만큼 반복해서 출력합니다.  
+list, arr, sum 전부 필요 없는 배열입니다. count 배열 하나면 됩니다.  
     
-# #내용 출처: https://hsp1116.tistory.com/33
+# #내용 출처: https://hsp1116.tistory.com/33, https://ko.wikipedia.org/wiki/합병_정렬
   
 # Usage
 
 ::input::  
 5  
 20 10 35 30 7  
-1 (selectionSort) / 2 (insertinSort) / 3 (bubbleSort) / 4 (quickSort)
+1 (selectionSort) / 2 (insertinSort) / 3 (bubbleSort) / 4 (quickSort) / 5 (mergeSort) / 6 (countSort)
 
 
 ::output::  
